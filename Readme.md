@@ -1,8 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Темир Газизов](https://up.htmlacademy.ru/react/5/user/1108975).
-* Наставник: `Неизвестно`.
-
+* Наставник: [Илья Шайна](https://htmlacademy.ru/profile/id1517699).
 ---
 
 _Не удаляйте и не изменяйте папки и файлы:_
