@@ -7,13 +7,16 @@ import RoomScreen from "../room-screen/room-screen";
 import Favorites from "../favorites/favorites";
 
 const App = (props) => {
-  const {placesAmount} = props;
+  const {placesAmount, offers} = props;
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainScreen placesAmount={placesAmount} />
+          <MainScreen
+            placesAmount={placesAmount}
+            offers={offers}
+          />
         </Route>
         <Route exact path="/login">
           <AuthScreen />
@@ -31,6 +34,7 @@ const App = (props) => {
 
 App.propTypes = {
   placesAmount: PropTypes.number.isRequired,
+  offers: PropTypes.array.isRequired,
 };
 
 export default App;
