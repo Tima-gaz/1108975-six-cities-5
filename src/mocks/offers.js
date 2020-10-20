@@ -30,6 +30,12 @@ export default [
     type: `Apartment`,
     isPremium: true,
     image: `img/room.jpg`,
+    roomsAmount: getRandomInt(1, 3),
+    guests: getRandomInt(2, 4),
+    stuff: STUFF,
+    hostName: `Angelina`,
+    hostAvatar: `img/avatar-angelina.jpg`,
+    hostDescription: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
   }, {
     price: getRandomInt(70, 490),
     isInBookmark: false,
@@ -38,6 +44,12 @@ export default [
     type: `Private room`,
     isPremium: false,
     image: `img/apartment-01.jpg`,
+    roomsAmount: getRandomInt(1, 3),
+    guests: getRandomInt(2, 4),
+    stuff: STUFF,
+    hostName: `Angelina`,
+    hostAvatar: `img/avatar-angelina.jpg`,
+    hostDescription: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
   }, {
     price: getRandomInt(70, 490),
     isInBookmark: true,
@@ -46,5 +58,11 @@ export default [
     type: `Private room`,
     isPremium: false,
     image: `img/apartment-03.jpg`,
+    roomsAmount: getRandomInt(1, 3),
+    guests: getRandomInt(2, 4),
+    stuff: STUFF,
+    hostName: `Angelina`,
+    hostAvatar: `img/avatar-angelina.jpg`,
+    hostDescription: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
   }
 ];

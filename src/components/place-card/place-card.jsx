@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import PlaceCardPropTypes from "../../place-card-proptypes";
+import PropTypes from "prop-types";
 
 class PlaceCard extends PureComponent {
   constructor(props) {
@@ -8,12 +9,14 @@ class PlaceCard extends PureComponent {
   }
 
   render() {
-    const {onHover, offer} = this.props;
+    const {offer, onHover, onBlur, onUserClick} = this.props;
     const {rating, image, price, isPremium, name, type} = offer;
+    const ratingLine = rating * 20;
     return (
       <article className="cities__place-card place-card"
-        onFocus={onHover(this)}
-        onBlur={onHover({})}
+        onMouseEnter={onHover}
+        onMouseLeave={onBlur}
+        onClick={onUserClick}
       >
         if ({isPremium}) {
           <div className="place-card__mark">
@@ -40,7 +43,7 @@ class PlaceCard extends PureComponent {
           </div>
           <div className="place-card__rating rating">
             <div className="place-card__stars rating__stars">
-              <span style={{width: 20 * {rating} + `%`}}></span>
+              <span style={{width: ratingLine + `%`}}></span>
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
@@ -54,6 +57,11 @@ class PlaceCard extends PureComponent {
   }
 }
 
-PlaceCard.propTypes = PlaceCardPropTypes;
+PlaceCard.propTypes = {
+  onHover: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  offer: PlaceCardPropTypes,
+  onUserClick: PropTypes.func.isRequired,
+};
 
 export default PlaceCard;

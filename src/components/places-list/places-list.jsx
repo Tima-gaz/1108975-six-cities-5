@@ -9,11 +9,22 @@ class PlacesList extends PureComponent {
     this.state = {
       focusedCard: {}
     };
+
     this.onHover = this.onHover.bind(this);
   }
 
-  onHover(card) {
-    this.setState({focusedCard: card.props.offer});
+  onHover(offer) {
+    return () => {
+      if (offer) {
+        this.setState({focusedCard: offer});
+      }
+    };
+  }
+
+  onBlur() {
+    return () => {
+      this.setState({focusedCard: null});
+    };
   }
 
   render() {
@@ -24,7 +35,9 @@ class PlacesList extends PureComponent {
         {offers.map((offer) => (
           <PlaceCard
             offer={offer}
-            onHover={this.onHover}
+            onHover={this.onHover(offer)}
+            onBlur={this.onBlur()}
+            onUserClick={this.props.onUserClick}
             key={offer.name}
           />
         ))}
@@ -35,6 +48,7 @@ class PlacesList extends PureComponent {
 
 PlacesList.propTypes = {
   offers: PropTypes.array.isRequired,
+  onUserClick: PropTypes.func.isRequired,
 };
 
 export default PlacesList;

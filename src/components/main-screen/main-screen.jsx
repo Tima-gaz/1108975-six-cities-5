@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import PlacesList from "../places-list/places-list";
 
 const MainScreen = (props) => {
-  const {placesAmount, offers} = props;
+  const {placesAmount, offers, onUserClick} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -96,6 +96,7 @@ const MainScreen = (props) => {
               </form>
               <PlacesList
                 offers={offers}
+                onUserClick={onUserClick}
               />
             </section>
             <div className="cities__right-section">
@@ -111,6 +112,7 @@ const MainScreen = (props) => {
 MainScreen.propTypes = {
   placesAmount: PropTypes.number.isRequired,
   offers: PropTypes.array.isRequired,
+  onUserClick: PropTypes.func.isRequired,
 };
 
 export default MainScreen;

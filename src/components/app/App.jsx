@@ -12,20 +12,24 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <MainScreen
-            placesAmount={placesAmount}
-            offers={offers}
-          />
-        </Route>
+        <Route exact
+          path="/"
+          render={({history}) => (
+            <MainScreen
+              placesAmount={placesAmount}
+              offers={offers}
+              onUserClick={() => history.push(`/offer/:id`)}
+            />
+          )}
+        />
         <Route exact path="/login">
           <AuthScreen />
         </Route>
         <Route exact path="/offer/:id">
-          <RoomScreen />
+          <RoomScreen offers={offers}/>
         </Route>
         <Route exact path="/favorites">
-          <Favorites />
+          <Favorites offers={offers}/>
         </Route>
       </Switch>
     </BrowserRouter>
