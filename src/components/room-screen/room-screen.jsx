@@ -7,6 +7,7 @@ const RoomScreen = (props) => {
   const {offers} = props;
   const {rating, image, price, isPremium, name, type, roomsAmount, guests, hostAvatar, hostDescription, hostName} = offers[0];
   const ratingLine = rating * 20;
+  const isPrem = {isPremium};
 
   return (
     <React.Fragment>
@@ -59,9 +60,7 @@ const RoomScreen = (props) => {
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-            if ({isPremium}) {
-                <Premium></Premium>
-              }
+              {isPrem ? <Premium></Premium> : null}
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   {name}

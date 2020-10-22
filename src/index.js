@@ -4,7 +4,7 @@ import App from "./components/app/app";
 import offers from "./mocks/offers";
 
 const Settings = {
-  PLACES_AMOUNT: 435
+  PLACES_AMOUNT: 436
 };
 
 ReactDOM.render(

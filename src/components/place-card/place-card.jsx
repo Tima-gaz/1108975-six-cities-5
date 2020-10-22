@@ -12,16 +12,18 @@ class PlaceCard extends PureComponent {
     const {offer, onHover, onBlur, onUserClick} = this.props;
     const {rating, image, price, isPremium, name, type} = offer;
     const ratingLine = rating * 20;
+    const isPrem = {isPremium};
+
     return (
       <article className="cities__place-card place-card"
         onMouseEnter={onHover}
         onMouseLeave={onBlur}
         onClick={onUserClick}
       >
-        if ({isPremium}) {
+        {isPrem ?
           <div className="place-card__mark">
             <span>Premium</span>
-          </div>
+          </div> : null
         }
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
@@ -60,7 +62,7 @@ class PlaceCard extends PureComponent {
 PlaceCard.propTypes = {
   onHover: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
-  offer: PlaceCardPropTypes,
+  offer: PlaceCardPropTypes.offer,
   onUserClick: PropTypes.func.isRequired,
 };
 

@@ -18,7 +18,10 @@ const App = (props) => {
             <MainScreen
               placesAmount={placesAmount}
               offers={offers}
-              onUserClick={() => history.push(`/offer/:id`)}
+              onUserClick={(evt) => {
+                evt.preventDefault();
+                history.push(`/offer/:id`);
+              }}
             />
           )}
         />
