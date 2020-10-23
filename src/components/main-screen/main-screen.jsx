@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PlacesList from "../places-list/places-list";
+import Map from "../map/map";
 
 const MainScreen = (props) => {
   const {placesAmount, offers, onUserClick} = props;
@@ -100,7 +101,9 @@ const MainScreen = (props) => {
               />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map
+                offers={offers}
+              />
             </div>
           </div>
         </div>
