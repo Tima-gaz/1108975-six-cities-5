@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import leaflet from "leaflet";
-import 'leaflet/dist/leaflet';
+import 'leaflet/dist/leaflet.css';
 
 class Map extends PureComponent {
   constructor(props) {
@@ -45,7 +45,7 @@ class Map extends PureComponent {
   render() {
     return (
       <section className="cities__map map">
-        <div id="map"></div>
+        <div id="map" style={{height: `100%`}}></div>
       </section>
     );
   }
